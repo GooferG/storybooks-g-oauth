@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const storiesController = require('../controllers/storiesController');
+const storiesController = require('../controllers/stories');
 const { ensureAuth } = require('../middleware/auth'); //to ensure user is logged on
 
-const Story = require('../models/Story');
+// const Story = require('../models/Story');
 
 // @desc Show Add page
 // @route GET /stories/add
