@@ -3,7 +3,7 @@ const router = express.Router();
 const indexController = require('../controllers/index');
 const { ensureAuth, ensureGuest } = require('../middleware/auth');
 
-const Story = require('../models/Story');
+// const Story = require('../models/Story');
 
 // @desc Login/Landing page
 // @route GET /
