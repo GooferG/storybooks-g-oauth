@@ -17,6 +17,10 @@ router.post('/', ensureAuth, storiesController.postStory);
 // @route GET /stories
 router.get('/', ensureAuth, storiesController.showStories);
 
+// @desc Show single story
+// @route GET /stories/:id
+router.get('/:id', ensureAuth, storiesController.singleStory);
+
 // @desc Show Edit page
 // @route GET /stories/edit/:id
 router.get('/edit/:id', ensureAuth, storiesController.editStory);
