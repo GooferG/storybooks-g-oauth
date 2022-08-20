@@ -32,8 +32,6 @@ module.exports = {
     }
   },
 
-  //  TODO: single story
-
   singleStory: async (req, res) => {
     try {
       let story = await Story.findById(req.params.id).populate('user').lean();
@@ -102,6 +100,24 @@ module.exports = {
     } catch (err) {
       console.error(err);
       return res.render('error/500');
+    }
+  },
+
+  userStories: async (req, res) => {
+    try {
+      const stories = await Story.find({
+        user: req.params.userId,
+        status: 'public',
+      })
+        .populate('user')
+        .lean();
+
+      res.render('stories/index', {
+        stories,
+      });
+    } catch (err) {
+      console.error(err);
+      res.render('error/500');
     }
   },
 };

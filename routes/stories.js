@@ -33,4 +33,8 @@ router.put('/:id', ensureAuth, storiesController.updateStory);
 // @route DELETE /stories/:id
 router.delete('/:id', ensureAuth, storiesController.deleteStory);
 
+// @desc User Stories
+// @route GET /stories/:userId
+router.get('/user/:userId', ensureAuth, storiesController.userStories);
+
 module.exports = router;
